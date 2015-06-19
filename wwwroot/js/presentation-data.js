@@ -48,56 +48,69 @@
 						},
 						{
 							"type": "View",
-							"layout": { "style": "vertical", "width": "1-5" },
+							"layout":{ "style": "vertical", "width": "2-5" },	
 							"children": [
 								{
 									"type": "Text",
-									"content": "Hello i am a text control" 	
+									"content": "testing nested columns..."
 								},
 								{
-									"type": "Flipper",
-									"children":[
+									"type": "View",
+									"children": [
 										{
-											"type": "Image",
-											"url": "img/default-avatar.png",
-											"layout": {
-												"width": "100px"
-											}
+											"type": "View",
+											"layout": { "style": "vertical", "width": "1-2" },
+											"children": [
+												{
+													"type": "Text",
+													"content": "Hello i am a text control" 	
+												},
+												{
+													"type": "Flipper",
+													"children":[
+														{
+															"type": "Image",
+															"url": "img/default-avatar.png",
+															"layout": {
+																"width": "100px"
+															}
+														},
+														{
+															"type": "Text",
+															"content":"here is a person"
+														}										
+													]
+												}
+											]
 										},
 										{
-											"type": "Text",
-											"content":"here is a person"
-										}										
-									]
-								},
-								{
-									"type": "Flipper",
-									"orientation": "v",
-									"children":[
-										{
-											"type": "Text",
-											"content": "this is the front text.. i haven't got this one right yet!!"
-										},
-										{
-											"type": "Text",
-											"content":"this is the back text"
-										}										
-									]
-								}
-								
-							]
-						},
-						{
-							"type": "View",
-							"layout": { "style": "vertical", "width": "1-5" },
-							"children": [
-								{
-									"type": "Text",
-									"content": "this is another text control"
+											"type": "View",
+											"layout": { "style": "vertical", "width": "1-2" },
+											"children": [
+												{
+													"type": "Text",
+													"content": "this is another text control"
+												},
+												{
+													"type": "Flipper",
+													"orientation": "v",
+													"children":[
+														{
+															"type": "Text",
+															"content": "this is the front text.. i haven't got this one right yet!!"
+														},
+														{
+															"type": "Text",
+															"content":"this is the back text"
+														}										
+													]
+												}													
+											]
+										}
+									]	
 								}
 							]
 						}
-
 					]
 				}
 			]
