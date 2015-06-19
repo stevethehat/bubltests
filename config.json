@@ -1,0 +1,10 @@
+{
+    "AppSettings": {
+        "SiteTitle": "Bubl"
+    },
+    "Data": {
+        "DefaultConnection": {
+            "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-Bubl-3e69bf8c-912c-4454-9058-315136c369f9;Trusted_Connection=True;MultipleActiveResultSets=true"
+        }
+    }
+}

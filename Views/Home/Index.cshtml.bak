@@ -1,0 +1,51 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+	<h1>Bubl Designer</h1>
+</div>
+<div class="pure-g">
+	<div class="pure-u-4-5" style="">
+		<div class="layoutElement" style="min-height: 400px" id="viewer">
+			the list
+		</div>
+		<div class="layoutElement">
+			<div class="pure-g">
+				<div class="pure-u-4-5" style="height: 200px">
+					the editor
+				</div>
+				<div class="pure-u-1-5; height: 200px">
+					<a class="pure-button>">
+						save
+					</a>
+					<hr/>
+					<a class="pure-button">
+						add
+					</a>
+					<a class="pure-button">
+						delete
+					</a>
+				</div>		
+			</div>
+		</div>
+	</div>
+	<div class="pure-u-1-5">
+		<div class="layoutElement" style="height: 600px">
+			
+		</div>
+	</div>	
+</div>
+
+<script src="js/lib/jquery-1.11.3.js"></script>
+<script src="js/lib/underscore.js"></script>
+<script src="js/lib/underscore.string.js"></script>
+
+<script src="js/zen/zen.js"></script>
+<script src="js/zen/events.js"></script>
+<script src="js/zen/data.js"></script>
+<script src="js/zen/ui.js"></script>
+<script src="js/app/ui-controls.js"></script>
+<script src="js/app/bubl-controls.js"></script>
+
+<script src="js/app/bubl.js"></script>

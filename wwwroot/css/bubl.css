@@ -1,0 +1,37 @@
+.flipper .ext { 
+	perspective: 1000; 
+}
+
+.flipper .ext,
+.flipper .front,
+.flipper .back {	height: 100px; width: 100px; }
+
+.flipper .ext:hover .int, 
+.flipper .ext.hover .int { 
+	transform: rotateY(180deg); 
+}
+
+.flipper .int { 
+	transition: .75s;
+	transform-style: preserve-3d;
+}
+
+.flipper .front, 
+.flipper .back {
+	backface-visibility: hidden;
+	background: #FFF; 
+	border: 1px solid #666; 
+	position: absolute; top: 0; left: 0;
+}
+
+.flipper .front { 
+	z-index: 2; 
+}
+
+.flipper .back { 
+	transform: rotateY(180deg); 
+}
+
+.flipper{
+	color:black;
+}
