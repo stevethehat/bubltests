@@ -82,9 +82,39 @@ _.extend(
 		}
 );
 
+function CrossFaderControl (params, parent) {
+	if (arguments.length > 0) {
+ 		ZEN.ui.BaseControl.call(this, params, parent);
+    }
+    return this;
+}
+
+CrossFaderControl.prototype = new ZEN.ui.BaseControl();
+
+_.extend(
+	CrossFaderControl.prototype,
+		{
+			init: function (params, parent) {
+				// call the base class init method
+				ZEN.ui.BaseControl.prototype.init.call(this, params, parent);
+			},
+			render: function () {
+				this.addElement('<div class="crossfader" style="width:100px;height:100px"/>');
+				var front = $('<div class="front"/>').appendTo(this.el);
+				var back = $('<div class="back"/>').appendTo(this.el);
+				ZEN.parse(this.params.children[1], { el: back } );
+				ZEN.parse(this.params.children[0], { el: front } );
+				
+				// make sure parsing doesnt continue
+				this.params.children = [];
+			}
+		}
+);
+
 
 ZEN.registerType('Bubl', BublControl);
 ZEN.registerType('Video', VideoControl);
 ZEN.registerType('Flipper', FlipperControl);
+ZEN.registerType('CrossFader', CrossFaderControl);
 
 

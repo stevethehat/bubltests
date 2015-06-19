@@ -63,17 +63,14 @@
 											"children": [
 												{
 													"type": "Text",
-													"content": "Hello i am a text control" 	
+													"content": "a Flipper" 	
 												},
 												{
 													"type": "Flipper",
 													"children":[
 														{
 															"type": "Image",
-															"url": "img/default-avatar.png",
-															"layout": {
-																"width": "100px"
-															}
+															"url": "img/default-avatar.png"
 														},
 														{
 															"type": "Text",
@@ -89,15 +86,14 @@
 											"children": [
 												{
 													"type": "Text",
-													"content": "this is another text control"
+													"content": "a CrossFader" 	
 												},
 												{
-													"type": "Flipper",
-													"orientation": "v",
+													"type": "CrossFader",
 													"children":[
 														{
-															"type": "Text",
-															"content": "this is the front text.. i haven't got this one right yet!!"
+															"type": "Image",
+															"url": "img/default-avatar.png"
 														},
 														{
 															"type": "Text",

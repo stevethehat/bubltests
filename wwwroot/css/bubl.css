@@ -44,3 +44,29 @@
 .flipper{
 	color:black;
 }
+
+
+.crossfader {
+  position:relative;
+  margin:0 auto;
+}
+
+.crossfader  div.front{
+	z-index: 1000;
+}
+.crossfader  div.back{
+	z-index: 999;
+}
+
+.crossfader  div.front, .crossfader div.back {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.crossfader div.front:hover {
+  opacity:0;
+}
