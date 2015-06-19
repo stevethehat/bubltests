@@ -6,9 +6,14 @@
 .flipper .front,
 .flipper .back {	height: 100px; width: 100px; }
 
-.flipper .ext:hover .int, 
-.flipper .ext.hover .int { 
+.flipper.h .ext:hover .int, 
+.flipper.h .ext.hover .int { 
 	transform: rotateY(180deg); 
+}
+
+.flipper.v .ext:hover .int, 
+.flipper.v .ext.hover .int { 
+	transform: rotateX(180deg); 
 }
 
 .flipper .int { 
@@ -28,8 +33,12 @@
 	z-index: 2; 
 }
 
-.flipper .back { 
+.flipper.h .back { 
 	transform: rotateY(180deg); 
+}
+
+.flipper.v .back { 
+	transform: rotateX(180deg); 
 }
 
 .flipper{

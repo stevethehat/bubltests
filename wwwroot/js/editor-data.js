@@ -73,6 +73,14 @@
 											"type": "Button",
 											"id": "DeleteButton",
 											"content":"Delete"
+										},
+										{
+											"type": "Break"
+										},
+										{
+											"type": "Button",
+											"id": "TestAPI",
+											"content": "Test Api"
 										}		
 									]
 								}

@@ -72,7 +72,7 @@ $(function() {
 					);
 				}
 			);	
-			$('#SaveButton').click(
+			$('#TestAPI').click(
 				function(){
 					$.get(self.apiRoot, 
 						function(data){
@@ -81,9 +81,23 @@ $(function() {
 					);				
 				}
 			);	
+			$('#SaveButton').click(
+				function(){
+				
+				}
+			);	
 			$('#DeleteButton').click(
 				function(){
 				
+				}
+			);	
+			$('#TestAPI').click(
+				function(){
+					$.get(self.apiRoot, 
+						function(data){
+							alert(data);
+						}	
+					);				
 				}
 			);	
 		}		

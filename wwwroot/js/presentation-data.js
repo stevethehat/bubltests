@@ -59,23 +59,24 @@
 									"children":[
 										{
 											"type": "Image",
-											"url": "http://ichef.bbci.co.uk/images/ic/112x63/p02tybsj.jpg",
+											"url": "img/default-avatar.png",
 											"layout": {
 												"width": "100px"
 											}
 										},
 										{
 											"type": "Text",
-											"content":"a lovely picture of some steak"
+											"content":"here is a person"
 										}										
 									]
 								},
 								{
 									"type": "Flipper",
+									"orientation": "v",
 									"children":[
 										{
 											"type": "Text",
-											"content": "this is the front text"
+											"content": "this is the front text.. i haven't got this one right yet!!"
 										},
 										{
 											"type": "Text",

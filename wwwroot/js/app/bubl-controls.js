@@ -63,35 +63,21 @@ _.extend(
 				ZEN.ui.BaseControl.prototype.init.call(this, params, parent);
 			},
 			render: function () {
-				/*
-<div class="ext" ontouchstart="this.classList.toggle('hover');">
-	<div class="int">
-		<div class="front"> 
-			<!-- your custom content --> 
-		</div>
-		<div class="back"> 
-			<!-- your custom content --> 
-		</div>
-	</div>
-</div>				
-				*/
-				//this.addElement('<div class="flipper" style="width:100px;height:100px"/>');
-				//var internal = this.el.append('<div class="ext" ontouchstart="this.classList.toggle(\'hover\');"><div class="int"><div class="front">this is the front</div><div class="back">this is the back</div></div></div>');
 				this.addElement('<div class="flipper" style="width:100px;height:100px"/>');
+				if(this.params.orientation === 'v'){
+					this.el.addClass('v');
+				} else {
+					this.el.addClass('h');
+				}
 				var external = $('<div class="ext" ontouchstart="this.classList.toggle(\'hover\');"/>').appendTo(this.el);
 				var internal = $('<div class="int"/>').appendTo(external);
 				var front = $('<div class="front"/>').appendTo(internal);
 				var back = $('<div class="back"/>').appendTo(internal);
 				ZEN.parse(this.params.children[0], { el: front } );
 				ZEN.parse(this.params.children[1], { el: back } );
+				
+				// make sure parsing doesnt continue
 				this.params.children = [];
-				/*
-				var internal = this.el.children('.ext').append('<div class="int"/>');
-				var front = this.el.children('.int').append('<div class="front"/>');
-				var back = this.el.children('.int').append('<div class="back"/>');
-				ZEN.parse(this.params.children[0], this.el.children('.front'));
-				ZEN.parse(this.params.children[1], this.el.children('.back'));
-				*/
 			}
 		}
 );
