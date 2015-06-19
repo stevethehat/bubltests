@@ -51,6 +51,9 @@ ZEN.ui = function () {
 					this.el.css('height', height);
 				}
 			}
+			if(this.params.style !== undefined){
+				this.el.css(this.params.style);
+			}
 			return(this.el);	
 		},
 		cleanup: function () {

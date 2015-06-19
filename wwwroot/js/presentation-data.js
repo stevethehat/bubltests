@@ -23,11 +23,17 @@
 						{
 							"type": "View",
 							"layout":{ "style": "vertical", "width": "2-5" },
+							"style": {
+								"text-align": "right"
+							},
 							"children":[
 								{
 									"type": "Image",
 									"id": "logo",
-									"url": "http://www.richinteractive.com/wp-content/uploads/2011/11/rich-logo-white-84High.png"
+									"url": "http://www.richinteractive.com/wp-content/uploads/2011/11/rich-logo-white-84High.png",
+									"style":{
+										"margin-right":"10px"
+									}
 								}
 							]
 						}
