@@ -81,6 +81,21 @@
 											"type": "Button",
 											"id": "TestAPI",
 											"content": "Test Api"
+										},
+										{
+											"type": "Break"
+										},
+										{
+											"type": "Text",
+											"content": "At the moment. You can click an element of the Bubl and see its definition JSON. Click 'Up' to navigate up and see definition of its container."
+										},		
+										{
+											"type": "Text",
+											"content": "N.B. as the editor is constructed from the same JSON format, you can navigate up into it."
+										},
+										{
+											"type": "Text",
+											"content": "The 'Test Api' button should call the webapi & show results but i get an error. The other buttons are not implementd."
 										}		
 									]
 								}
