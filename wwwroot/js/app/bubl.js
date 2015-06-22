@@ -2,6 +2,7 @@ $(function() {
 
 	var bubl = {
 		apiRoot: 'http://bublv2apitest.azurewebsites.net/api/objects',
+		//apiRoot: 'http://localhost:5001/js/testresponse.js',
 		selectedElement : null,
 		init: function(){
 			var self = this;
@@ -93,11 +94,21 @@ $(function() {
 			);	
 			$('#TestAPI').click(
 				function(){
-					$.get(self.apiRoot, 
+					$.ajaxSetup({dataType: 'text'});
+					ZEN.log('starting test api "' + self.apiRoot + '"');
+					var request = $.get(self.apiRoot, {});
+					request.success(
 						function(data){
+							data = data.replace(/ObjectId\(/g, '').replace(/\)/g, '');
+							data = JSON.parse(data);
 							alert(data);
-						}	
-					);				
+						}
+					);
+					request.error(
+						function(jqXHR, textStatus, errorThrown){
+							alert('textStatus="' + textStatus + '" errorThrown = "' + errorThrown + '"');
+						}
+					);
 				}
 			);	
 		}		
