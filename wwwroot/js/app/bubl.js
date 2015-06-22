@@ -2,7 +2,6 @@ $(function() {
 
 	var bubl = {
 		apiRoot: 'http://bublv2apitest.azurewebsites.net/api/objects',
-		//apiRoot: 'http://localhost:5001/js/testresponse.js',
 		selectedElement : null,
 		init: function(){
 			var self = this;
@@ -65,21 +64,12 @@ $(function() {
 			$('#AddButton').click(					
 				function(){
 					var data = self.editor.getSession().getValue();
-					alert('posting ' + data);
-					$.post(self.apiRoot, data, 
-						function(){
-							alert('done');
+					$.post(self.apiRoot, JSON.parse(data), 
+						function(returnData){
+							returnData = returnData;
+							alert(JSON.stringify(returnData));
 						}	
 					);
-				}
-			);	
-			$('#TestAPI').click(
-				function(){
-					$.get(self.apiRoot, 
-						function(data){
-							alert(data);
-						}	
-					);				
 				}
 			);	
 			$('#SaveButton').click(
@@ -94,14 +84,11 @@ $(function() {
 			);	
 			$('#TestAPI').click(
 				function(){
-					$.ajaxSetup({dataType: 'text'});
 					ZEN.log('starting test api "' + self.apiRoot + '"');
 					var request = $.get(self.apiRoot, {});
 					request.success(
 						function(data){
-							data = data.replace(/ObjectId\(/g, '').replace(/\)/g, '');
-							data = JSON.parse(data);
-							alert(data);
+							alert(JSON.stringify(data));
 						}
 					);
 					request.error(
