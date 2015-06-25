@@ -1,7 +1,7 @@
 {
 	"type": "Bubl",
 	"id": "bubl",
-	"views": [
+	"children": [
 		{
 			"type": "View",
 			"id": "Page1",
@@ -9,9 +9,11 @@
 			"children" : [
 				{
 					"type": "View",
+					"title": "top panel",
 					"children":[
 						{
 							"type": "View",
+							"title": "top panel left",
 							"layout":{ "style": "vertical", "width": "3-5" },
 							"children": [
 								{
@@ -22,6 +24,7 @@
 						},
 						{
 							"type": "View",
+							"title": "top panel right",
 							"layout":{ "style": "vertical", "width": "2-5" },
 							"style": {
 								"text-align": "right"
