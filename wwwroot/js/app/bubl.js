@@ -26,9 +26,12 @@ $(function() {
 		loadBubl: function(){
 			var self = this;
 			ZEN.data.load(
-				'/js/presentation-data.js', {},
+				//http://localhost:3000/api/objects/1000/withdescendents
+				'http://localhost:3000/api/objects/bubl/withdescendents', {},
 				function(data){
+					//alert(JSON.stringify(data));
 					var contentArea = { el: $('#bubl') };
+					$('#bubl').empty();
 					ZEN.parse(data, contentArea);	
 					
 					self.editor = ace.edit("editor");
@@ -62,11 +65,15 @@ $(function() {
 					}
 				}
 			);	
-			$('#AddButton').click(
+			$('#UpdateButton').click(
 				function(){	
 					var editorData = self.editor.getSession().getValue();
 					var json = JSON.parse(editorData); 
-					self.addObject(json);
+					self.upsertObject(json,
+						function(data){
+							self.loadBubl();
+						}
+					);
 				}
 				/*				
 				function(){
@@ -114,14 +121,17 @@ $(function() {
 							data['parentId'] = '1000';
 							var children = [];
 							children.push(data);
-							self.addObject(
-								{ 'type': 'import', 'title': 'ImportTest', 'id': '1000', 'children': children }
+							self.upsertObject(
+								{ 'type': 'import', 'title': 'ImportTest', 'id': '1000', 'children': children },
+								function(data){
+									alert('imported ' + JSON.stringify(data));
+								}
 							);
 							/*
 							$.post(self.apiRoot, { 'type': 'import', 'title': 'ImportTest', 'id': '1000' }, 
 								function(){
 									data['parentId'] = '1000';
-									self.addObject(data);
+									self.upsertObject(data);
 								}	
 							);
 							*/	
@@ -140,7 +150,7 @@ $(function() {
 				}
 			);	
 		},
-		addObject: function(object){
+		upsertObject: function(object, callback){
 			var self = this;
 			
 			ZEN.log('posting');
@@ -157,6 +167,7 @@ $(function() {
 					//returnData = JSON.parse(returnData);
 					ZEN.log('returned data');
 					ZEN.log(returnData);
+					callback(returnData);
 				}
 			});
 		}

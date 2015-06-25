@@ -58,14 +58,9 @@
 										},
 										{
 											"type": "Button",
-											"id": "AddButton",
-											"content": "Add"
+											"id": "UpdateButton",
+											"content": "Update"
 										},		
-										{
-											"type": "Button",
-											"id": "SaveButton",
-											"content": "Save"
-										},
 										{
 											"type": "Break"
 										},
