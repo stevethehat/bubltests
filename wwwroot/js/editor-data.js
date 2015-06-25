@@ -83,6 +83,19 @@
 											"content": "Test Api"
 										},
 										{
+											"type": "Button",
+											"id": "Import",
+											"content": "Import"
+										},
+										{
+											"type": "Break"
+										},
+										{
+											"type": "Button",
+											"id": "Init",
+											"content": "Init"
+										},
+										{
 											"type": "Break"
 										},
 										{
