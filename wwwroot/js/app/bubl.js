@@ -75,26 +75,16 @@ $(function() {
 						}
 					);
 				}
-				/*				
-				function(){
-					var data = self.editor.getSession().getValue();
-					$.post(self.apiRoot, JSON.parse(data), 
-						function(returnData){
-							returnData = returnData;
-							ZEM.log(returnData);
-						}	
-					);
-				}
-				*/
-			);	
-			$('#SaveButton').click(
-				function(){
-				
-				}
 			);	
 			$('#DeleteButton').click(
 				function(){
-				
+					var object = self.selectedElement.data('settings');
+					alert('delete ' + JSON.stringify(object));
+					self.deleteObject(object,
+						function(data){
+							self.loadBubl();
+						}
+					);				
 				}
 			);	
 			$('#TestAPI').click(
@@ -124,17 +114,10 @@ $(function() {
 							self.upsertObject(
 								{ 'type': 'import', 'title': 'ImportTest', 'id': '1000', 'children': children },
 								function(data){
+									self.loadBubl();
 									alert('imported ' + JSON.stringify(data));
 								}
 							);
-							/*
-							$.post(self.apiRoot, { 'type': 'import', 'title': 'ImportTest', 'id': '1000' }, 
-								function(){
-									data['parentId'] = '1000';
-									self.upsertObject(data);
-								}	
-							);
-							*/	
 						}
 					);
 				}
@@ -161,10 +144,27 @@ $(function() {
         		type: 'POST',
         		contentType: 'application/json',
         		data: JSON.stringify(object),
-        		// processData: false, // this is optional
         		dataType: 'json',
 				success: function(returnData){
-					//returnData = JSON.parse(returnData);
+					ZEN.log('returned data');
+					ZEN.log(returnData);
+					callback(returnData);
+				}
+			});
+		},
+		deleteObject: function(object, callback){
+			var self = this;
+			
+			ZEN.log('deleting');
+			ZEN.log(object);			
+			
+   			$.ajax({
+        		url: self.apiRoot + '/' + object['id'],
+        		type: 'DELETE',
+        		contentType: 'application/json',
+        		data: JSON.stringify(object),
+        		dataType: 'json',
+				success: function(returnData){
 					ZEN.log('returned data');
 					ZEN.log(returnData);
 					callback(returnData);
